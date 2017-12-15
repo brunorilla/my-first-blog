@@ -23,3 +23,19 @@ class Categoria(models.Model):
     
     def __str__(self):
         return self.nombre
+
+class Book(models.Model):
+    BOOK_CHOICES = (
+        ('El Capital','El Capital'),
+        ('Rebelion en la granja','Rebelion en la granja'),
+        ('Big Sur','Big Sur'),
+        ('Factotum','Factotum'),
+        ('Espera a la primavera, Bandini','Espera a la primavera, Bandini'),
+        ('History of France','History of France'),
+        ('PHP manual','PHP manual'),
+        ('La vida en rojo','La vida en rojo'),
+    )
+    titulo = models.CharField(max_length = 100, choices = BOOK_CHOICES)
+
+    def __str__(self):
+        return self.titulo               
