@@ -5,8 +5,7 @@ class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
     text = models.TextField()
-    created_date = models.DateTimeField(
-            default=timezone.now)
+    created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(
             blank=True, null=True)
 
@@ -16,3 +15,11 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class Categoria(models.Model):
+    nombre = models.CharField(max_length=100)
+    color = models.CharField(max_length=60)
+
+    
+    def __str__(self):
+        return self.nombre
