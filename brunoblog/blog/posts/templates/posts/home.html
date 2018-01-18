@@ -3,8 +3,10 @@
 <h2>Latest posts:</h2>
 
 {% for post in posts.all %}
+
+{{ post.id }}
 <div> 
-<h3> {{ post.title }} </h3>
+<h3> <a href="{% url 'posts_detail' post.id %}"> {{ post.title }}</a> </h3>
 <h4> {{ post.pub_date_pretty }} </h4>
 <p> <img src="{{ post.image.url }}" alt="PostImage">
 <p> {{ post.summary }} </p>
